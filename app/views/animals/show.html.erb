@@ -1,0 +1,5 @@
+<h2><%= @animal.name %></h2>
+    <p><%= @animal.category %></p>
+    <p>Found on <%= @animal.found_on %> at <%= @animal.address %></p>
+    <%= link_to "Editez les infos", edit_animal_path(@animal)  %>
+    <%= link_to "Back", animals_path %>

@@ -1,0 +1,17 @@
+<%= form_for @animal do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Kitty" %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, placeholder: "25, rue du petit Musc" %>
+
+  <%= f.label :found_on %>
+  <%= f.date_field :found_on %>
+
+  <%= f.label :category %>
+  <%= f.select :category, Animal::CATEGORIES, prompt: "Quelle catégorie ?" %>
+
+  <%= f.submit %>
+
+<% end %>

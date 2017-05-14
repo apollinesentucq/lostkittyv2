@@ -1,0 +1,13 @@
+<h1>Lost Kitty for <%= Date.today %></h1>
+
+<ul>
+  <% @animals.each do |animal| %>
+    <li>
+    <h2><%= animal.name %></h2>
+    <p><%= animal.category %></p>
+    <p>Found on <%= animal.found_on %> at <%= animal.address %></p>
+    <%= link_to animal.name, animal_path(animal) %>
+    <%= link_to "remove", animal_path(animal), method: :delete %>
+    </li>
+    <% end %>
+</ul>
