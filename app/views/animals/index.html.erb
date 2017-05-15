@@ -1,13 +1,21 @@
 <h1>Lost Kitty for <%= Date.today %></h1>
 
+<div class="text-center">
+  <%=  link_to "Found a kitty?", new_animal_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container"></div>
+  <div class="row"></div>
 <ul>
   <% @animals.each do |animal| %>
-    <li>
-    <h2><%= animal.name %></h2>
-    <p><%= animal.category %></p>
-    <p>Found on <%= animal.found_on %> at <%= animal.address %></p>
-    <%= link_to animal.name, animal_path(animal) %>
-    <%= link_to "remove", animal_path(animal), method: :delete %>
-    </li>
-    <% end %>
+    <div class="col-xs-12 col-sm-4">
+      <li>
+      <h2><%= animal.name %></h2>
+      <p><%= animal.category %></p>
+      <p>Found on <%= animal.found_on %> at <%= animal.address %></p>
+      <%= link_to animal.name, animal_path(animal), class: "btn btn-success" %>
+      <%= link_to "remove", animal_path(animal), method: :delete, class: "btn btn-danger" %>
+      </li>
+    </div>
+      <% end %>
 </ul>

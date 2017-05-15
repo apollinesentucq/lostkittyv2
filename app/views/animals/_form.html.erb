@@ -1,17 +1,21 @@
-<%= form_for @animal do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @animal do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "Kitty" %>
+          <%= f.input :name, placeholder: "Kitty" %>
 
-  <%= f.label :address %>
-  <%= f.text_field :address, placeholder: "25, rue du petit Musc" %>
+          <%= f.input :address, placeholder: "25, rue du petit Musc" %>
 
-  <%= f.label :found_on %>
-  <%= f.date_field :found_on %>
+          <%= f.input :found_on, as: :text, input_html: {id: "animal-found"} %>
 
-  <%= f.label :category %>
-  <%= f.select :category, Animal::CATEGORIES, prompt: "Quelle catégorie ?" %>
+          <%= f.input :category, collection: Animal::CATEGORIES, prompt: "Choose one" %>
 
-  <%= f.submit %>
+          <%= f.submit class: "btn btn-success" %>
 
-<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
